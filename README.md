@@ -1,8 +1,14 @@
-# Water Reminder Widget 💧
+# Water Reminder Widget 💧---Snoopy
 
 桌面动态陪伴与喝水提醒挂件 — 用可爱的 GIF 动图提醒你按时喝水、站起来活动。
 
 A cross-platform desktop widget that reminds you to drink water with cute animated GIFs.
+
+---
+
+## 小红书🍠 / Red
+喜欢史努比的你还没有关注OCunning_Lúc吗！
+快来看看我的主页>> https://xhslink.com/m/3sBQ1lzFHzM
 
 ---
 
@@ -12,9 +18,9 @@ A cross-platform desktop widget that reminds you to drink water with cute animat
 - 🎭 3 个状态：待机 / 提醒 / 奖励，各自配有独立 GIF 动图
 - ✏️ 提醒与奖励文案分别自定义，支持自选文字颜色
 - ⏰ 提醒间隔：30 / 45 / 60 / 自定义分钟
-- 🔊 支持上传自定义提示音（mp3 / wav / m4a）
+- 🔊 支持上传自定义提示音（mp3（最佳） / wav / m4a）
 - ⚙️ 常驻系统托盘，右键挂件或点击托盘图标即可进入设置
-- 🎨 可上传自定义透明背景 GIF 替换默认形象
+- 🎨 可上传自定义透明背景 GIF 替换默认形象（180×180最佳）
 
 ---
 
