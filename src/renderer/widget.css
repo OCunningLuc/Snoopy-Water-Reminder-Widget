@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: visible;
+  -webkit-user-select: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui,
+    -system-ui, 'Segoe UI', sans-serif;
+}
+
+#widget-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 6px;
+  cursor: grab;
+}
+
+#widget-container.dragging {
+  cursor: grabbing;
+}
+
+#avatar {
+  max-width: 180px;
+  max-height: 180px;
+  image-rendering: auto;
+  object-fit: contain;
+}
+
+.bubble {
+  position: static;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  max-width: 100%;
+  word-break: break-word;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease-out;
+}
+
+.bubble.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  display: none;
+}
+

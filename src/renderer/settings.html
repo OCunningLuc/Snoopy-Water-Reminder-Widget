@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Water Reminder Settings</title>
+    <link rel="stylesheet" href="./settings.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="title-block">
+          <h1>设置</h1>
+          <p>自定义你的陪伴形象与提醒节奏</p>
+        </div>
+        <button id="reset-button" class="ghost-button">恢复默认</button>
+      </header>
+
+      <main class="app-main">
+        <section class="card">
+          <h2>形象设置</h2>
+          <p class="section-desc">
+            建议使用带透明背景的 GIF，尺寸约 180×180。
+          </p>
+          <div class="avatar-grid">
+            <div class="avatar-item">
+              <div class="avatar-preview">
+                <img id="idle-preview" alt="待机形象预览" />
+              </div>
+              <div class="avatar-meta">
+                <h3>待机状态</h3>
+                <p>默认静止 / 轻微动作</p>
+                <button
+                  class="primary-button subtle"
+                  data-avatar-state="idle"
+                >
+                  更换 GIF
+                </button>
+              </div>
+            </div>
+            <div class="avatar-item">
+              <div class="avatar-preview">
+                <img id="alert-preview" alt="提醒形象预览" />
+              </div>
+              <div class="avatar-meta">
+                <h3>提醒状态</h3>
+                <p>醒目的"提醒喝水"动作</p>
+                <button
+                  class="primary-button subtle"
+                  data-avatar-state="alert"
+                >
+                  更换 GIF
+                </button>
+              </div>
+            </div>
+            <div class="avatar-item">
+              <div class="avatar-preview">
+                <img id="reward-preview" alt="奖励形象预览" />
+              </div>
+              <div class="avatar-meta">
+                <h3>奖励状态</h3>
+                <p>确认喝水后播放的开心动作</p>
+                <button
+                  class="primary-button subtle"
+                  data-avatar-state="reward"
+                >
+                  更换 GIF
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>提醒间隔</h2>
+          <p class="section-desc">选择一个适合你的喝水节奏。</p>
+          <div class="interval-options">
+            <label class="radio-chip">
+              <input type="radio" name="interval" value="30" id="interval-30" />
+              <span>每 30 分钟</span>
+            </label>
+            <label class="radio-chip">
+              <input type="radio" name="interval" value="45" id="interval-45" />
+              <span>每 45 分钟</span>
+            </label>
+            <label class="radio-chip">
+              <input type="radio" name="interval" value="60" id="interval-60" />
+              <span>每 60 分钟</span>
+            </label>
+            <label class="radio-chip">
+              <input type="radio" name="interval" value="custom" id="interval-custom" />
+              <span>自定义</span>
+            </label>
+            <div class="custom-input">
+              <input type="number" id="custom-interval-input" min="1" max="600" />
+              <span class="unit">分钟</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>提醒内容</h2>
+          <p class="section-desc">
+            输入你想被提醒的内容，例如"喝水""站起来活动一下"等。
+          </p>
+          <div class="inline-row" style="gap: 8px; margin-bottom: 8px;">
+            <label style="font-size: 12px; color: #cbd5e1; min-width: 88px;">提醒状态文字</label>
+            <input
+              type="text"
+              id="alert-reminder-text-input"
+              maxlength="40"
+              placeholder="该喝水啦！"
+              style="flex: 1; padding: 6px 10px; border-radius: 999px; border: none; outline: none; font-size: 12px; background: rgba(15,23,42,0.8); box-shadow: 0 0 0 1px rgba(75,85,99,0.9); color: #e5e7eb;"
+            />
+            <div style="display:flex; flex-direction:column; align-items:flex-start; gap:2px;">
+              <label for="reminder-color-input" style="font-size:10px; color:#9ca3af;">文字颜色</label>
+              <input
+                type="color"
+                id="reminder-color-input"
+                value="#ffffff"
+                style="width:32px; height:22px; padding:0; border-radius:999px; border:none; background:transparent; box-shadow:0 0 0 1px rgba(75,85,99,0.9);"
+              />
+            </div>
+          </div>
+          <div class="inline-row" style="gap: 8px;">
+            <label style="font-size: 12px; color: #cbd5e1; min-width: 88px;">奖励状态文字</label>
+            <input
+              type="text"
+              id="reward-reminder-text-input"
+              maxlength="40"
+              placeholder="蒸蚌！"
+              style="flex: 1; padding: 6px 10px; border-radius: 999px; border: none; outline: none; font-size: 12px; background: rgba(15,23,42,0.8); box-shadow: 0 0 0 1px rgba(75,85,99,0.9); color: #e5e7eb;"
+            />
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>提示音</h2>
+          <p class="section-desc">可上传自己的 mp3 作为提醒音。</p>
+          <div class="inline-row" style="justify-content: space-between;">
+            <div>
+              <div class="primary" style="font-size:13px;">当前音频</div>
+              <div id="sound-file-name" class="secondary" style="font-size:11px; color:#9ca3af;">alert.mp3</div>
+            </div>
+            <button id="select-sound-button" class="primary-button subtle">
+              上传提示音 MP3
+            </button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>其他</h2>
+          <div class="inline-row">
+            <label class="switch">
+              <input type="checkbox" id="sound-toggle" />
+              <span class="slider"></span>
+            </label>
+            <div class="switch-labels">
+              <div class="primary">提醒音效</div>
+              <div class="secondary">到时间时播放清脆提示音</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <button id="exit-app-button" class="ghost-button">退出应用</button>
+        <button id="cancel-button" class="ghost-button">关闭</button>
+        <button id="save-button" class="primary-button">保存设置</button>
+      </footer>
+    </div>
+
+    <script src="./settings.js"></script>
+  </body>
+</html>
