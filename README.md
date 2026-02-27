@@ -14,7 +14,7 @@ A cross-platform desktop widget that reminds you to drink water with cute animat
 
 ## 功能 / Features
 
-- 🖥️ 透明无边框桌面挂件，始终置顶，可自由拖拽
+- 🖥️ 透明无边框桌面挂件，可自由拖拽
 - 🎭 3 个状态：待机 / 提醒 / 奖励，各自配有独立 GIF 动图
 - ✏️ 提醒与奖励文案分别自定义，支持自选文字颜色
 - ⏰ 提醒间隔：30 / 45 / 60 / 自定义分钟
